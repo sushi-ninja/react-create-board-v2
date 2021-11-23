@@ -10,7 +10,7 @@ package.json 에 미리 입력된 실행코드대로 port번호를따라 실행�
 
 
 ### radma 
-람다는 함수형프로그래밍을위한 라이브러리이며 그이상도 그이하도아니다
+람다는 함수형프로그래밍을위한 라이브러리이며 그이상도 그이하도아니다<br>
 [https://www.youtube.com/watch?v=r_MZ0xCv1_A] 자세한건 해당영상에서 확인가능
 
 ### lazy 와 Suspense
