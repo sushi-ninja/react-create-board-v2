@@ -20,6 +20,14 @@ package.json 에 미리 입력된 실행코드대로 port번호를따라 실행�
 람다는 함수형프로그래밍을위한 라이브러리이며 그이상도 그이하도아니다<br>
 [https://www.youtube.com/watch?v=r_MZ0xCv1_A] 자세한건 해당영상에서 확인가능
 
+### redux-saga
+리덕스의 미들웨어 이며
+리덕스가 액션을 수행하면 redux-saga에서 디스패치하여 redux액션을 가로채고 액션의 역할을 수행하며<br>
+다시 애션을 발행하여 데이터를 저장하거나 다른 이벤트를 수행시킨다
+
+리덕스의 미들웨어에 관한 블로그<br>
+[https://redux-advanced.vlpt.us/]
+
 ### lazy 와 Suspense
 코드 스플리팅(Code Splitting)
 
@@ -46,3 +54,76 @@ import React,{Suspense} from 'react';
 ```
 
 Suspense에서 fallback props를 통해 로딩 중에 보여 줄 JSX를 지정할 수 있다.
+
+
+### 리액트에서 가장 유명한 패턴
+[https://velog.io/@seong-dodo/React-Presentational%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-Container%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8]<br>
+
+리액트에서 가장 유명한 패턴인이자 가독성과 생산성을 고려한 방법인 프레젠테이션 컴포넌트와 컨테이너 컴포넌트에 대해 알아보려고 한다.
+
+#### Presentational 컴포넌트
+1. 데이터 출력, 데이터 처리 능력은 없음, no logic
+2. DOM 마크업과 스타일 담당(UI)
+3. Redux와 관련 없음
+4. 부모 컴포넌트로부터 받은 Props인 데이터와 콜백(callback)을 사용
+
+#### Container 컴포넌트
+1. 데이터 처리 능력 있음, 동작(behavior) logic, API Request, Exception Error, setState... ETC ...
+2. Redux와 관련 있음
+3. 렌더링 되어야 할 데이터를 props로써 데이터 처리 능력이 없는 Presentational 컴포넌트로 전달
+
+
+#### App 컴포넌트 👈 이런게 바로 프레젠테이션 컴포넌트다!
+```
+import React from 'react';
+
+import InputContainer from './InputContainer';
+
+export default function App() {
+  return (
+    <InputContainer />
+  );
+}
+```
+
+위처럼 담아낸것을 결과적으로 표현하는게 프레젠테이션 컴포넌트이며
+
+#### InputContainer 컴포넌트 👈 이런게 바로 컨테이너 컴포넌트다!
+```
+import React from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
+
+import Input from './Input';
+
+import {
+  updateTaskTitle,
+  addTask,
+} from './actions';
+
+export default function InputContainer() {
+  const { taskTitle } = useSelector((state) => ({
+    taskTitle: state.taskTitle,
+  }));
+
+  const dispatch = useDispatch();
+
+  function handleChangeTitle(event) {
+    dispatch(updateTaskTitle(event.target.value));
+  }
+
+  function handleClickAddTask() {
+    dispatch(addTask());
+  }
+
+  return (
+    <Input
+      value={taskTitle}
+      onChange={handleChangeTitle}
+      onClick={handleClickAddTask}
+    />
+  );
+}
+```
+
+위처럼 표현될 컴포넌트의 실상이되는 컴포넌트가 컨테이너 컴포넌트이다
