@@ -41,7 +41,6 @@ React.lazy는 컴포넌트를 렌더링하는 시점에서 비동기적으로 �
 const SplitMe = React.lazy(()=> import('./SplitMe'));
 ```
 
-
 #### suspense
 Suspense는 리액트 내장 컴포넌트로서 코드 스플리팅된 컴포넌트를 로딩하도록 발동시킬 수 있고, 로딩이 끝나지 않았을 때 보여 줄 UI를 설정할 수 있다 사용 방법은 다음과 같다
 
