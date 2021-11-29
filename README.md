@@ -2,6 +2,10 @@
 [https://binaryjourney.tistory.com/49]
 
 ---
+
+### 리덕스와 리덕스 사가 에 대한 기본적인 원리
+리덕스[https://www.youtube.com/watch?v=Mb2mvZd9XUM]<br>
+리덕스 사가[https://www.youtube.com/watch?v=MwvwrYHBs34]<br>
 해당 crud 공부파일 실행법은 다음과같다<br>
 1. 아무파일이나 클릭하면 좌측하단에 NPM 스크립트 라는 메뉴가 생긴다
 2. 해당메뉴에는 packge.json에 미리 작성된대로 script문이 실행될수있게 ui가 준비되어있다
