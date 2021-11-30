@@ -6,6 +6,7 @@ function App() {
     return (
       <div>
         <Views />
+        <div>test</div>
       </div>
     );
 }
