@@ -1,6 +1,9 @@
 리액트로 crud 구현하기 공부중
 [https://binaryjourney.tistory.com/49]
 
+설치항목들
+[yarn add redux react-redux react-router react-router-dom redux-saga @reduxjs/toolkit axios redux-logger ramda query-string]
+
 ---
 
 ### 리덕스와 리덕스 사가 에 대한 기본적인 원리

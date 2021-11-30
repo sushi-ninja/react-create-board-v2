@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
+import reportWebVitals from './reportWebVitals';
 // import { BrowserRouter } from 'react-router-dom'; // 나중에 비교해보세요.
 /**
  * https://stackoverflow.com/questions/56707885/browserrouter-vs-router-with-history-push
@@ -23,3 +24,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+reportWebVitals();
