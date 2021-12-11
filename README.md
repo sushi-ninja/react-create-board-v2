@@ -6,9 +6,76 @@
 
 ---
 
+### redux@toolkit
+기본 튜토리얼[https://soyoung210.github.io/redux-toolkit/tutorials/basic-tutorial]
+
+redux toolkit 은 기본적으로 createStore()를 랩핑하고있는 configureStore()함수를 제공한다
+
+하지만 configureStore는 store를 생성하는 단계에서 몇 가지 유용한 개발 도구가 설정되도록 해야한다
+configureStore에 관한 블로그[https://mjn5027.tistory.com/36]<br>
+ReduxToolkit 을 이용한 튜토리얼[https://oyg0420.tistory.com/entry/ReactjsRedux-Toolkit%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-TodoList%EB%A7%8C%EB%93%A4%EA%B8%B0]
+
+
+
+
+
 ### 리덕스와 리덕스 사가 에 대한 기본적인 원리
 리덕스[https://www.youtube.com/watch?v=Mb2mvZd9XUM]<br>
 리덕스 사가[https://www.youtube.com/watch?v=MwvwrYHBs34]<br>
+리덕스 사가 블로그 [https://okayoon.tistory.com/entry/Redux-saga]<br>
+
+
+### 자주 사용하는 헬퍼 함수
+redux-saga는 스토어에 지정된 액션들이 디스패치되었을 때,
+task를 만들기 위해 내부 함수들을 감싸는 헬퍼 이펙트를 제공합니다. 
+(task는 작업단위의 실행단위를 의미한다 대안이 되는 용어로는 프로세스, 경량프로세스,스레드,스텝,요청 등등이있다)
+
+#### all
+제너레이터 함수를 배열의 형태로 인자로 넣어주면 병렬로 동시에 실행됩니다.
+이때 모든 함수에 대한 결과가 resolve될 때까지 블럭됩니다. 
+
+#### put
+특정 액션의 디스패치하도록 합니다.
+결과를 스토어에 디스패치(put) 합니다.
+
+#### call, apply
+순수 객체만 리턴하는 함수입니다. 오브젝트 메소드 호출을 지원합니다.
+첫번째 파라미터는 함수이며 나머지 파라미터는 해당 함수에 넣을 인수 값 입니다.
+액션이 발생하면 전달한 함수를 호출하여 실행합니다.
+API가 리턴될때까지 블럭되며, 비동기 함수 호출 시 용이합니다.
+call과 apply는 두번째 인자 값의 차이만 있습니다.
+
+#### delay
+설정된 시간 이후에 resolve를 하는 Promise 객체를 리턴합니다.
+제너레이터를 정지하는데 사용할 수 있습니다.
+
+#### takeEvery
+액션이 발생하게되면 task를 실행합니다.
+task가 종료되기 전에 또 다른 액션이 발생할 경우, 또 하나의 새로운 task를 실행합니다.
+
+#### takeLatest
+액션이 발생하게되면 task를 실행합니다.
+만약 실행 중인 task가 있다면 기존 task를 종료하고 새로운 task를 실행합니다.
+실수로 여러번 클릭했을때를 방지하거나 마지막에 요청된 데이터를 보여줄 때 사용합니다.
+
+#### takeLeading
+액션이 발생하게되면 task를 실행합니다.
+해당 task의 실행이 완료되기 전까지 뒤에 오는 이벤트들을 블럭합니다.
+이후 task가 완료되면 액션에 대해 수신합니다.
+
+#### throttle
+초 이내 요청을 한 번만 보냅니다.
+마지막 함수가 호출된 후 일정 시간이 지나기 전 재 호출하지 않습니다.
+스크롤 이벤트 사용 시 용이합니다.
+
+#### debounce
+초 이내 요청을 한 번만 보냅니다.
+처음 함수나 마지막 함수만 호출 후 일정시간이 지나기 전 재 호출하지 않습니다.
+
+출처: https://okayoon.tistory.com/entry/Redux-saga [Zzolab Blog :)]
+--- 
+
+
 해당 crud 공부파일 실행법은 다음과같다<br>
 1. 아무파일이나 클릭하면 좌측하단에 NPM 스크립트 라는 메뉴가 생긴다
 2. 해당메뉴에는 packge.json에 미리 작성된대로 script문이 실행될수있게 ui가 준비되어있다
@@ -31,7 +98,7 @@ package.json 에 미리 입력된 실행코드대로 port번호를따라 실행�
 리덕스의 미들웨어 이며
 리덕스가 액션을 수행하면 redux-saga에서 디스패치하여 redux액션을 가로채고 액션의 역할을 수행하며<br>
 다시 애션을 발행하여 데이터를 저장하거나 다른 이벤트를 수행시킨다
-
+d
 리덕스의 미들웨어에 관한 블로그<br>
 [https://redux-advanced.vlpt.us/]
 
