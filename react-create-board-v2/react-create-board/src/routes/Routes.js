@@ -12,7 +12,7 @@ function Routes() {
 
     return (
         <div>
-					<Suspense fallback={<div>Loading...</div>}>
+					<Suspense fallback={<div>Loading...</div>}> {/* 아직 로딩되지 않았을땐 해당 문구가 출력됨 */}
 						<Switch>
 							<Route path={"/"} exact component={Main} />
 							<Route path={"/board/:boardId"} exact component={ArticleList} />
