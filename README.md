@@ -1,7 +1,7 @@
-리액트로 crud 구현하기 공부중
+## 리액트로 crud 구현하기 공부중
 [https://binaryjourney.tistory.com/49]
 
-설치항목들
+### 설치항목들
 [yarn add redux react-redux react-router react-router-dom redux-saga @reduxjs/toolkit axios redux-logger ramda query-string]
 
 ---
@@ -30,8 +30,6 @@ redux-saga는 스토어에 지정된 액션들이 디스패치되었을 때,
 task를 만들기 위해 내부 함수들을 감싸는 헬퍼 이펙트를 제공합니다. 
 (task는 작업단위의 실행단위를 의미한다 대안이 되는 용어로는 프로세스, 경량프로세스,스레드,스텝,요청 등등이있다)
 
-#### call
-함수 동기적 호출
 
 #### fork
 함수 비동기적 호출
@@ -44,6 +42,10 @@ task를 만들기 위해 내부 함수들을 감싸는 헬퍼 이펙트를 제�
 특정 액션의 디스패치하도록 합니다.
 결과를 스토어에 디스패치(put) 합니다.
 
+특정 액션을 dispatch하도록 한다.
+예시: put({type: 'INCREMENT]})
+→ INCREAMENT action을 dispatch한다.
+
 #### call, apply
 순수 객체만 리턴하는 함수입니다. 오브젝트 메소드 호출을 지원합니다.
 첫번째 파라미터는 함수이며 나머지 파라미터는 해당 함수에 넣을 인수 값 입니다.
@@ -51,18 +53,40 @@ task를 만들기 위해 내부 함수들을 감싸는 헬퍼 이펙트를 제�
 API가 리턴될때까지 블럭되며, 비동기 함수 호출 시 용이합니다.
 call과 apply는 두번째 인자 값의 차이만 있습니다.
 
+#### call
+함수를 동기적으로 호출할때 사용
+
+함수의 첫 번째 파라미터는 함수, 나머지 파라미터는 해당 함수에 넣을 인수이다.
+예시: call(delay, 1000)
+→delay(1000)함수를 call함수를 사용해서 이렇게 쓸 수도 있다.
+
+call과 put의 다른 점은 put은 스토어에 인자로 들어온 action을 dispatch하고, call인 경우에는 주어진 함수를 실행하게 되는 것이다.
+
+
 #### delay
 설정된 시간 이후에 resolve를 하는 Promise 객체를 리턴합니다.
 제너레이터를 정지하는데 사용할 수 있습니다.
+
+설정된 시간 이후에 resolve하는 Promise객체를 리턴한다.
+예시: delay(1000)
+→ 1초 기다리기
 
 #### takeEvery
 액션이 발생하게되면 task를 실행합니다.
 task가 종료되기 전에 또 다른 액션이 발생할 경우, 또 하나의 새로운 task를 실행합니다.
 
+들어오는 모든 액션에 대해 특정 작업을 처리해 준다.
+예시: takeEvery(INCREASE_ASYNC, increaseSaga)
+→ 들어오는 모든 INCREASE_ASYNC액션에 대해 increaseSaga 함수 실행
+
 #### takeLatest
 액션이 발생하게되면 task를 실행합니다.
 만약 실행 중인 task가 있다면 기존 task를 종료하고 새로운 task를 실행합니다.
 실수로 여러번 클릭했을때를 방지하거나 마지막에 요청된 데이터를 보여줄 때 사용합니다.
+
+기존에 진행 중이던 작업이 있다면 취소 처리하고 가장 마지막으로 실행된 작업만 수행한다.
+예시: takeLatest(DECREASE_ASYNC, decreaseSaga)
+→ DECREASE_ASYNC액션에 대해서 기존에 진행 중이던 작업이 있다면 취소 처리하고 가장 마지막으로 실행된 작업에 대해서만 decreaseSaga함수를 실행한다.
 
 #### takeLeading
 액션이 발생하게되면 task를 실행합니다.
