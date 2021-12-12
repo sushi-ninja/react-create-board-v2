@@ -1,5 +1,5 @@
 // App.js
-
+import './App.css'
 import Views from "./Views";
 
 function App() {
