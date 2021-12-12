@@ -11,6 +11,8 @@ import history from "./history";
 const sagaMiddleware = createSagaMiddleware({
     context: { history: history },
 });
+// history 
+
 const initialState = {};
 
 const store = configureStore({
