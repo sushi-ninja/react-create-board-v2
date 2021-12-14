@@ -230,3 +230,24 @@ export default function InputContainer() {
 ```
 
 위처럼 표현될 컴포넌트의 실상이되는 컴포넌트가 컨테이너 컴포넌트이다
+
+### slice 
+[https://velog.io/@goonerholic/Redux-Toolkit-createSlice-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0]
+
+```
+redux toolkit 문법 이용하면 reducer가 아니라 createSlice를 만듭니다 
+
+슬라이스에는 state와 그 state를 수정하는 방법들이 들어있습니다
+
+그냥 reducer와 state기본값 보관함입니다 
+
+ 
+
+redux saga는 리덕스로 dispatch 날리는걸 중간에 가로채서
+
+서버와 ajax 통신을 해주고
+
+통신이 완료되면 dispatch 계속 진행시켜주는 라이브러리입니다
+```
+코딩애플 강사가 남긴댓글
+
