@@ -15,12 +15,15 @@ const sagaMiddleware = createSagaMiddleware({
 // 미들웨어로서 context history를 만드는이유는 https://binaryjourney.tistory.com/50 에서 확인
 
 const initialState = {};
+// => preloadState
 
 const store = configureStore({
     reducer: rootReducer, //리듀서들을 정의
     middleware: [sagaMiddleware, logger], // store에 마운트 
-    devTools: true,
-    preloadedState: initialState,
+    devTools: true, //불리언값으로 리덕스 개발자 도구를 끄거나 켭니다.
+    preloadedState: initialState, // 스토어의 초기값
+
+    //http://blog.hwahae.co.kr/all/tech/tech-tech/6946/
 });
 
 sagaMiddleware.run(rootSaga);

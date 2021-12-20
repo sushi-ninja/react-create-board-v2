@@ -251,3 +251,17 @@ redux saga는 리덕스로 dispatch 날리는걸 중간에 가로채서
 ```
 코딩애플 강사가 남긴댓글
 
+
+
+### axios 
+[https://kyun2da.dev/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/axios-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/]
+바닐라 자바스크립트의 ajax처리인 fetch()와 비교한 axios 개념정리
+
+[https://yamoo9.github.io/axios/guide/usage.html#post-%EC%9A%94%EC%B2%AD]
+axios 러닝가이드
+
+[https://inpa.tistory.com/114]
+axios 기본 가이드
+
+ajax 처리를 좀더 원활하고 간단하게 하기위해 설치하는 라이브러리이다
+

@@ -1,12 +1,11 @@
 // App.js
-import './App.css'
 import Views from "./Views";
 
 function App() {
     return (
       <div>
         <Views />
-        <div>test</div>
+        <div className="testercss">test</div>
       </div>
     );
 }
