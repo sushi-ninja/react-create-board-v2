@@ -18,6 +18,19 @@ ReduxToolkit 을 이용한 튜토리얼[https://oyg0420.tistory.com/entry/Reactj
 
 
 
+### redux 개념,구조,실습
+[https://hwan1001.tistory.com/38]
+
+#### Redux란?
+
+- 리액트에서 상태를 더 효율적으로 관리하는 데 사용하는 상태 관리 라이브러리
+
+- 리덕스는 쉽게 설명하면 상태 관리의 로직을 컴포넌트 밖에서 처리 하는 것이다.
+
+- 리덕스를 사용하면 스토어라는 개체 내부에 상태를 담게 된다.
+
+
+
 
 ### 리덕스와 리덕스 사가 에 대한 기본적인 원리
 리덕스[https://www.youtube.com/watch?v=Mb2mvZd9XUM]<br>
