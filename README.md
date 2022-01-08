@@ -8,6 +8,7 @@
 
 ### redux@toolkit
 기본 튜토리얼[https://soyoung210.github.io/redux-toolkit/tutorials/basic-tutorial]
+리덕스 툴 킷 총정리[https://velog.io/@kingyong9169/Redux-Tool-kit-%EC%B4%9D%EC%A0%95%EB%A6%AC]
 
 redux toolkit 은 기본적으로 createStore()를 랩핑하고있는 configureStore()함수를 제공한다
 
