@@ -1,0 +1,52 @@
+{
+  "codes":[
+    {
+      "id":1,
+      "value":"J",
+      "desc":"Journal"
+    },
+    {
+      "id":2,
+      "value":"D",
+      "desc":"ToDo"
+    },
+    {
+      "id":3,
+      "value":"T",
+      "desc":"Test"
+    }
+  ],
+  "board":[
+    {
+      "id": 1,
+      "name": "일기",
+      "inserDate": 1617351293396,
+      "updateDate": 1617351293396,
+      "code":"J"
+    },
+    {
+      "id": 2,
+      "name": "To Do List",
+      "inserDate": 1617351293396,
+      "updateDate": 1617351293396,
+      "code":"D"
+    },
+    {
+      "id": 3,
+      "name": "Test List",
+      "inserDate": 1617351293396,
+      "updateDate": 1617351293396,
+      "code":"T"
+    }
+  ],
+  "articles":[
+    {
+      "id": 1,
+      "content": "내일은 치킨데이",
+      "inserDate": 1617351448578,
+      "updateDate": "",
+      "boardId":2,
+      "articleId":1
+    }
+  ]
+}
