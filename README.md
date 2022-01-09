@@ -22,6 +22,9 @@ ReduxToolkit 을 이용한 튜토리얼[https://oyg0420.tistory.com/entry/Reactj
 ### redux 개념,구조,실습
 [https://hwan1001.tistory.com/38]
 
+### redux 간편설명 
+[https://youtu.be/wSbjROmXTaY?t=337]
+
 #### Redux란?
 
 - 리액트에서 상태를 더 효율적으로 관리하는 데 사용하는 상태 관리 라이브러리
