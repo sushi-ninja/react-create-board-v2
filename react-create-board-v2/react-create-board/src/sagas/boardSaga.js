@@ -6,14 +6,15 @@ import axios from '../utils/axios';
 
 // api 서버 연결 주소
 function apiGetBoard(boardId) {
-    return axios.get(`boards/${boardId}`); // board/id 에서 데이터를가져옴
+    return axios.get(`boards/${boardId}`); // json-server 의 boards/id 에서 데이터를가져옴
 }
 
 function apiGetBoardList() {
-    return axios.get(`boards`); // boards 에서 데이터를 가져옴
+    return axios.get(`boards`); // json-server 의 boards 에서 데이터를 가져옴
 }
 
 // api 서버 연결 후 action 호출
+// json-server에서 정상적으로 데이터가 불러와졌음을 확인
 function* asyncGetBoardList() {
     try {
         const response = yield call(apiGetBoardList);

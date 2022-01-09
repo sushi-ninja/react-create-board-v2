@@ -16,7 +16,7 @@
       "desc":"Test"
     }
   ],
-  "board":[
+  "boards":[
     {
       "id": 1,
       "name": "일기",
