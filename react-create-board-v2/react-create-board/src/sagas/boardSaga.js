@@ -20,6 +20,11 @@ function* asyncGetBoardList() {
         const response = yield call(apiGetBoardList);
         console.log(response);
         if(response?.status === 200){
+          //?. 는 optional chaining 으로서
+          // ?. 연산자는 . 체이닝 연산자와 유사하게 작동하지만
+          // 만약 참조가 nullish (en-US) (null 또는 undefined)이라면
+          // 에러가 발생하는 것 대신에 표현식의 리턴 값은 undefined로 단락된다
+          
           yield put(boardActions.getBoardListSuccess(response));
         }else{
           yield put(boardActions.getBoardListFail(response));
